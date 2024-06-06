@@ -1,13 +1,2694 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Estilo globales */
+* {
+  font-family: 'Poppins';
+}
+h2 {
+  margin-top: 8%;
+  font-size: 20px;
+  color: rgba(25, 25, 25, 0.901);
+}
+p {
+  color: #4e4e4e;
+  font-size: 18px;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+/* Estilo del Header */
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #717171;
+  width: 100%;
+  height: 110px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Estilo del HomeButtons y Menu */
+h1 {
+  font-weight: 900;
+  font-size: 50px;
+  color: #FF7438;
+}
+
+/* Para pantallas pequeñas (teléfonos) */
+@media only screen and (max-width: 767px) {
+  h1 {
+    margin-top: 40%;
+    font-size: 30px;
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    margin-top: 20%;
+    font-size: 40px;
+  }
+}
+
+/* Para pantallas grandes (PCs) */
+@media only screen and (min-width: 992px) {
+  h1 {
+    margin-top: 5%;
+    font-size: 50px;
+  }
+}
+
+/* Estilos del Menu */
+.Container {
+  margin-top: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que los elementos se envuelvan a la siguiente línea cuando no hay suficiente espacio */
+  justify-content: space-around;
+  /* espacio entre los elementos */
+}
+.ManejoCajas {
+  margin: 10px;
+  /* Espacio entre los elementos */
+  background-color: #ffffff;
+  height: 330px;
+  border-radius: 10%;
+  box-shadow: 15px 15px 30px #4acdb9bd;
+  margin-bottom: 80px;
+  width: 450px;
+  /* Tamaño predeterminado */
+
+  /* Consulta de medios para ajustar el número de columnas en pantallas más pequeñas */
+  @media (max-width: 1200px) {
+    width: calc(33.33% - 20px);
+    /* 33.33% del ancho del contenedor en pantallas medianas */
+  }
+
+  @media (max-width: 768px) {
+    width: calc(50% - 20px);
+    /* 50% del ancho del contenedor en pantallas más pequeñas */
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 20px);
+    /* 100% del ancho del contenedor en pantallas muy pequeñas */
+  }
+}
+
+/* Estilo del Box */
+.Containerbox {
+  margin-top: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que los elementos se envuelvan a la siguiente línea cuando no hay suficiente espacio */
+  justify-content: space-around;
+  /* espacio entre los elementos */
+}
+.box {
+  margin: 10px;
+  /* Espacio entre los elementos */
+  background-color: #ffffff;
+  height: 350px;
+  border-radius: 10%;
+  box-shadow: 15px 15px 30px #000000bd;
+  margin-bottom: 80px;
+  width: 500px;
+  /* Tamaño predeterminado */
+
+  /* Consulta de medios para ajustar el número de columnas en pantallas más pequeñas */
+  @media (max-width: 1200px) {
+    width: calc(33.33% - 20px);
+  }
+
+  @media (max-width: 1200px) {
+    width: calc(50% - 20px);
+  }
+
+  @media (max-width: 1000px) {
+    width: calc(56% - 20px);
+  }
+
+  @media (max-width: 1025px) {
+    width: calc(56% - 20px);
+    height: 330px;
+  }
+
+  @media (max-width: 900px) {
+    width: calc(56% - 10px);
+    height: 400px;
+  }
+
+  @media (max-width: 850px) {
+    width: calc(60% - -10px);
+    height: 370px;
+  }
+
+  @media (max-width: 800px) {
+    width: calc(60% - -50px);
+    height: 350px;
+  }
+
+  @media (max-width: 700px) {
+    width: calc(60% - -70px);
+    height: 400px;
+  }
+
+  @media (max-width: 715px) {
+    width: calc(60% - -110px);
+    height: 400px;
+  }
+
+  @media (max-width: 590px) {
+    width: calc(60% - -160px);
+    height: 400px;
+  }
+
+  @media (max-width: 500px) {
+    width: calc(60% - -170px);
+    height: 500px;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+    font-size: 4px;
+    margin: 5px;
+    height: 285px;
+  }
+
+  @media (max-width: 390px) {
+    width: calc(60% - -170px);
+    height: 280px;
+  }
+
+  @media (max-width: 330px) {
+    width: calc(60% - -170px);
+    height: 220px;
+  }
+}
+.creaBox {
+  border: 2px solid #4ACDBA;
+  /* border-width estilo border-color */
+  border-radius: 50px;
+  width: 25%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -17%;
+  margin-left: 43%;
+  font-size: 14px;
+
+  @media (max-width: 458px) {
+    width: 24%;
+    margin-left: 47%;
+    margin-top: -18%;
+    font-size: 14px;
+
+  }
+}
+.tokenBox {
+  border: 2px solid #4ACDBA;
+  /* border-width estilo border-color */
+  border-radius: 50px;
+  width: 23%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5.3%;
+  margin-left: 70%;
+  font-size: 14px;
+  cursor: pointer;
+
+  @media (max-width: 458px) {
+    width: 24%;
+    margin-left: 73%;
+    font-size: 14px;
+
+  }
+}
+.Titulo h1 {
+  margin-top: 10%;
+
+  @media (max-width: 1115px) {
+    margin-top: 15%;
+  }
+
+  @media (max-width: 770px) {
+    margin-top: 19%;
+  }
+  @media (max-width: 600px) {
+    margin-top: 21%;
+    font-size: 20px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 30%;
+  }
+  @media (max-width: 420px) {
+    margin-top: 39%;
+  }
+}
+.responsive-h3 {
+  font-size: 13px;
+  font-weight: 200;
+}
+.valorBox {
+  margin-top: -6%
+}
+.responsive-valorBox {
+  color: #FF7438;
+  font-size: 17px;
+  font-weight: 200;
+}
+.PorcentajeBox {
+  color: #FF7438;
+  font-size: 24px;
+  font-weight: 100;
+  margin-left: 3%
+}
+
+.NombreBox {
+  margin-bottom: 0%;
+  margin-top: 5%;
+  margin-left: 18%;
+  color: black
+}
+
+.valorBox-h3 {
+  font-size: 18px;
+  font-weight: 400
+}
+
+.iconoBox img {
+  width: 55;
+  height: auto;
+  margin-top: -5%;
+  margin-left: 4%
+}
+
+/* Estilos dependiendo la pantalla en el box */
+@media (max-width: 840px) {
+  .creaBox {
+    margin-top: -17%;
+  }
+}
+
+@media (max-width: 770px) {
+  .creaBox {
+    margin-top: -17.5%;
+  }
+
+  .tokenBox {
+    margin-top: -6%;
+  }
+}
+
+@media (max-width: 430px) {
+  .valorBox {
+    margin-top: -2%
+  }
+
+  .responsive-valorBox {
+    font-size: 12px;
+  }
+
+  .responsive-h3 {
+    font-size: 11px;
+  }
+
+  .PorcentajeBox h3 {
+    font-size: 21px;
+    margin-left: 1%;
+  }
+
+  .NombreBox {
+    font-size: 13px;
+    margin-left: 21%;
+  }
+
+  .valorBox-h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .iconoBox img {
+    width: 45px;
+  }
+
+  .creaBox {
+    margin-top: -15%;
+    font-size: 10px;
+  }
+
+  .tokenBox {
+    margin-top: -6%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .responsive-valorBox {
+    font-size: 12px;
+  }
+
+  .valorBox {
+    margin-top: -2%
+  }
+
+  .responsive-h3 {
+    font-size: 9.8px;
+  }
+
+  .PorcentajeBox h3 {
+    font-size: 20px;
+  }
+
+  .NombreBox {
+    font-size: 12px;
+    margin-left: 21%;
+  }
+
+  .valorBox-h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .creaBox h3 {
+    font-size: 10px;
+  }
+
+  .tokenBox h3 {
+    font-size: 11px;
+  }
+
+  .iconoBox img {
+    width: 45px;
+  }
+
+  .creaBox {
+    margin-top: -17%;
+  }
+
+  .tokenBox {
+    margin-top: -6%;
+  }
+
+  .tokenBox img {
+    width: 8px;
+  }
+}
+
+@media (max-width: 350px) {
+  .responsive-valorBox {
+    font-size: 10px;
+  }
+
+  .valorBox {
+    margin-top: -3%
+  }
+
+  .responsive-h3 {
+    font-size: 7.5px;
+  }
+
+  .PorcentajeBox h3 {
+    font-size: 15px;
+  }
+
+  .NombreBox {
+    font-size: 10px;
+    margin-left: 21%;
+  }
+
+  .valorBox-h3 {
+    font-size: 10px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .creaBox h3 {
+    font-size: 9px;
+  }
+
+  .tokenBox h3 {
+    font-size: 9px;
+  }
+
+  .iconoBox img {
+    width: 38px;
+  }
+
+  .creaBox {
+    margin-top: -17%;
+  }
+
+  .tokenBox {
+    margin-top: -7%;
+  }
+
+  .tokenBox img {
+    width: 4px;
+  }
+}
+
+/* Estilos del modal de manejo cajas */
+.ModalContent {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  border-radius: 40px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+}
+
+.ModalOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Estilos del botón de cerrar modal */
+.closeButtonContainer {
+  position: absolute;
+  top: 1%;
+  left: 90%;
+}
+
+.CerrarModalButton {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #FF7438;
+  font-weight: 700;
+}
+
+.Guardar {
+  background-color: #ffffff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: -10%;
+  margin-left: 70%;
+  height: auto;
+}
+
+/* Estilo ComboBox de manejo cajas */
+.conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.modal-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.conteiner h1 {
+  color: #FF7438;
+  margin-right: 20%;
+  margin-top: 5%;
+
+  @media (max-width: 1000px) {
+    margin-right: 25%;
+    margin-top: 5%;
+  }
+
+  @media (max-width: 800px) {
+    margin-right: 28%;
+    margin-top: 5%;
+    margin-bottom: 13%;
+  }
+
+  @media (max-width: 750px) {
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 13%;
+  }
+
+  @media (max-width: 500px) {
+    margin-right: 32%;
+    margin-top: 5%;
+  }
+}
+
+.conteiner p {
+  color: #000000;
+  margin-left: -5%;
+  margin-top: -15%;
+}
+
+.select {
+  border: 1px solid #4ACDBA;
+  outline: none;
+  width: 300px;
+  height: 30px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input {
+  border: 1px solid #4ACDBA;
+  outline: none;
+  width: 138px;
+  height: 30px;
+  background: transparent;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.input {
+  text-align: center;
+}
+
+.input::placeholder {
+  text-align: center;
+}
+
+/* Estilos del detalle las Cajas */
+.TituloDetallesCaja {
+  margin-top: 11%;
+}
+
+.TituloDetallesCaja h1 {
+  color: #FF7438;
+  font-size: 40px;
+}
+
+.FechaValorBox h3 {
+  color: #000000;
+  font-size: 30px;
+  margin-top: -1%;
+}
+
+.contenedorBusqueda {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contenedorIconoBusqueda {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+}
+
+.iconoBusqueda {
+  font-size: 24px;
+  color: #000000;
+}
+
+.inputDetallesCaja {
+  border: 1px solid #000000;
+  outline: none;
+  width: 300px;
+  height: 60px;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 30px;
+  padding-left: 40px;
+  /* Ajusta el espacio a la izquierda para el icono */
+}
+
+.selectDetallesCaja {
+  border: 1px solid #000000;
+  outline: none;
+  width: 300px;
+  height: 60px;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 30px;
+  margin-top: -15px;
+}
+
+.FechaValorBox {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 0%;
+}
+
+/* Estilos de detalles movimientos */
+/* Estilos generales del accordionSumary, funciona para todos los items */
+.TituloMovimiento {
+  color: #FF7438;
+  font-size: 30px;
+  font-weight: bold;
+
+  @media (max-width: 950px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 830px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 730px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 530px) {
+    font-size: 10px;
+  }
+}
+
+.CantidadMovimiento {
+  position: absolute;
+  top: 70%;
+  font-size: 13px;
+  color: gray;
+
+  @media (max-width: 830px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 630px) {
+    font-size: 9px;
+  }
+}
+
+.ValorMovimiento {
+  position: absolute;
+  left: 50%;
+  margin-top: 1.3%;
+  font-size: large;
+
+  @media (max-width: 830px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 730px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 630px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 6px;
+    margin-left: 10px;
+  }
+}
+
+.AgregarMovimiento {
+  border: 2px solid #4ACDBA;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 170px;
+
+  @media (max-width: 1550px) {
+  }
+
+  @media (max-width: 1300px) {
+    position: absolute;
+    left: 70%;
+  }
+
+  @media (max-width: 1130px) {
+    position: absolute;
+    left: 65%;
+  }
+
+  @media (max-width: 950px) {
+    position: absolute;
+    left: 70%;
+    width: 100px;
+    padding: 3px;
+    font-size: 10px;
+  }
+
+  @media (max-width: 650px) {
+    position: absolute;
+    left: 65%;
+    width: 80px;
+    padding: 3px;
+    font-size: 8px;
+  }
+
+  @media (max-width: 500px) {
+    position: absolute;
+    left: 60%;
+    width: 50px;
+    padding: 3px;
+    font-size: 5px;
+  }
+}
+
+.AgregarMovimiento .iconoBusqueda {
+  margin-right: 2px;
+  color: #4ACDBA;
+
+  @media (max-width: 530px) {
+    font-size: 10px;
+  }
+}
+
+.AgregarMovimiento>div {
+  margin-left: 15%;
+  margin-top: 0.5%;
+
+  @media (max-width: 830px) {
+    margin-left: 2%;
+  }
+
+  @media (max-width: 530px) {
+    margin-left: 2%;
+  }
+}
+
+
+/* Estilos de los detalles del movimiento gasto */
+.DetallesAcordeonGasto {
+  display: flex;
+  justify-content: space-between;
+  width: 50%
+}
+
+.DescripcionColumnaGasto {
+  width: 45%;
+
+  @media (max-width: 1700px) {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.DescripcionColumnaGasto>div {
+  margin-left: 2%;
+
+  @media (max-width: 1380px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 1250px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 1050px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 770px) {
+    font-size: 6px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 5px;
+  }
+
+  @media (max-width: 490px) {
+    font-size: 4px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 4px;
+  }
+}
+.DescriptionContainer {
+  display: flex;
+}
+
+.valueDetails {
+  width: 45%;
+  color: gray
+}
+
+.DescripcionColumnaGasto {
+  margin-left: 40%;
+  color: black;
+
+  @media (max-width: 1700px) {
+    margin-left: 2%;
+  }
+
+  @media (max-width: 1450px) {
+    margin-top: -11%;
+    margin-left: 47%;
+  }
+
+  @media (max-width: 1380px) {
+    margin-top: -9%;
+    margin-left: 42%;
+    font-size: 13px;
+  }
+
+  @media (max-width: 1250px) {
+    margin-top: -9%;
+    margin-left: 42%;
+    font-size: 11px;
+  }
+
+  @media (max-width: 1050px) {
+    font-size: 9px;
+    margin-top: -8%;
+    margin-left: 42%;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 8px;
+    margin-top: -9%;
+    margin-left: 42%;
+  }
+
+  @media (max-width: 770px) {
+    font-size: 6px;
+    margin-top: -9%;
+    margin-left: 42%;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 5px;
+    margin-top: -9%;
+    margin-left: 42%;
+  }
+
+  @media (max-width: 490px) {
+    font-size: 4px;
+    margin-top: -9%;
+    margin-left: 42%;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 3px;
+    margin-top: -9%;
+    margin-left: 48%;
+  }
+}
+
+.LineaVerticalGasto {
+  height: 80px;
+  width: 1px;
+  margin: 20px auto;
+  background-color: #4acdb9bd;
+  margin-top: -2%;
+
+  @media (max-width: 1700px) {
+    height: 80px;
+    width: 2px;
+    margin: 20px auto;
+    margin-top: -2%;
+    margin-right: 3%;
+  }
+
+  @media (max-width: 1450px) {
+    height: 80px;
+    width: 2px;
+    margin: 20px auto;
+    margin-top: -2%;
+    margin-right: 3%;
+  }
+
+  @media (max-width: 1250px) {
+    height: 45px;
+    width: 2px;
+    margin: 20px auto;
+    margin-top: -2%;
+    margin-right: 3%;
+  }
+
+  @media (max-width: 630px) {
+    height: 30px;
+    width: 2px;
+    margin: 20px auto;
+    margin-top: -2%;
+    margin-right: 3%;
+  }
+
+  @media (max-width: 490px) {
+    height: 20px;
+    width: 2px;
+    margin: 20px auto;
+    margin-top: -2%;
+    margin-right: 3%;
+  }
+}
+
+.IconoReporteGasto {
+  margin-left: 90%;
+  margin-top: -7%;
+
+  @media (max-width: 1450px) {
+    margin-left: 90%;
+    margin-top: -10%;
+  }
+
+  @media (max-width: 1250px) {
+    margin-left: 90%;
+    margin-top: -8%;
+  }
+
+  @media (max-width: 1050px) {
+    margin-left: 90%;
+    margin-top: -9%;
+  }
+
+  @media (max-width: 900px) {
+    margin-left: 90%;
+    margin-top: -10%;
+  }
+
+  @media (max-width: 770px) {
+    margin-left: 90%;
+    margin-top: -12%;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 90%;
+    margin-top: -14%;
+  }
+
+  @media (max-width: 490px) {
+    margin-left: 90%;
+    margin-top: -13%;
+  }
+
+  @media (max-width: 420px) {
+    margin-left: 90%;
+    margin-top: -19%;
+  }
+}
+
+.IconoReporteGasto .imagenGasto {
+  width: 40px;
+  height: auto;
+
+  @media (max-width: 1450px) {
+    width: 35px;
+    height: auto;
+  }
+
+  @media (max-width: 1250px) {
+    width: 28px;
+    height: auto;
+  }
+
+  @media (max-width: 1050px) {
+    width: 22px;
+    height: auto;
+  }
+
+  @media (max-width: 900px) {
+    width: 18px;
+    height: auto;
+  }
+
+  @media (max-width: 490px) {
+    width: 12px;
+    height: auto;
+  }
+
+}
+
+.LineaHorizontalGasto {
+  text-align: center;
+  margin-top: 0%;
+
+  @media (max-width: 1250px) {
+    margin-top: -2%;
+  }
+
+  @media (max-width: 630px) {
+    margin-top: -5%;
+  }
+
+  @media (max-width: 490px) {
+    margin-top: -8%;
+  }
+}
+
+.LineaHorizontalGasto hr {
+  width: 96%;
+  margin: 20px auto;
+  border-color: #4acdb9bd;
+}
+
+/* Estilos de los detalles de los movimientos ingreso y retiro */
+.AccordionDetailsIngreso {
+  display: flex;
+  flex-direction: column;
+}
+
+.LineaHorizontalIngreso {
+  text-align: center;
+  margin-top: -2%;
+
+  @media (max-width: 770px) {
+    margin-top: -8%;
+  }
+
+  @media (max-width: 550px) {
+    margin-top: -10%;
+  }
+
+  @media (max-width: 450px) {
+    margin-top: -15%;
+  }
+}
+
+.LineaHorizontalIngreso hr {
+  width: 94%;
+  margin: 20px auto;
+  border-color: #4acdb9bd;
+}
+
+.DescripcionIzquierdaIngreso {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.DescripcionIzquierdaIngreso .DescripcionColumnaIngreso {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.DescripcionIzquierdaIngreso .DescripcionColumnaIngreso>div {
+  margin-left: 2%;
+
+  @media (max-width: 650px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 8px;
+  }
+}
+
+.DescripcionIzquierdaIngreso .DescripcionColumnaIngreso .ValorIngreso {
+  margin-left: 38%;
+  color: black;
+  margin-top: -8%;
+
+  @media (max-width: 1700px) {
+    margin-left: 44%;
+    margin-top: -9.5%;
+  }
+
+  @media (max-width: 1520px) {
+    margin-left: 50%;
+    margin-top: -11%;
+  }
+
+  @media (max-width: 1300px) {
+    margin-left: 60%;
+    margin-top: -12.5%;
+    width: 100%;
+  }
+
+  @media (max-width: 1150px) {
+    margin-left: 75%;
+    margin-top: -14%;
+    width: 100%;
+  }
+
+  @media (max-width: 1050px) {
+    margin-left: 95%;
+    margin-top: -20%;
+    width: 100%;
+  }
+
+  @media (max-width: 770px) {
+    margin-left: 115%;
+    margin-top: -24%;
+    width: 100%;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 10px;
+    margin-left: 95%;
+    margin-top: -18%;
+    width: 100%;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 10px;
+    margin-left: 105%;
+    margin-top: -22%;
+    width: 100%;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 8px;
+    margin-left: 115%;
+    margin-top: -22%;
+    width: 100%;
+  }
+}
+
+.IconoReporteIngreso {
+  margin-left: 90%;
+  margin-top: -4%;
+
+  @media (max-width: 1300px) {
+    margin-left: 90%;
+    margin-top: -6%;
+  }
+
+  @media (max-width: 1050px) {
+    margin-left: 90%;
+    margin-top: -9%;
+  }
+
+  @media (max-width: 770px) {
+    margin-left: 90%;
+    margin-top: -11%;
+  }
+
+  @media (max-width: 650px) {
+    margin-left: 90%;
+    margin-top: -10%;
+  }
+}
+
+.IconoReporteIngreso .imagenIngreso {
+  width: 40px;
+  height: auto;
+
+  @media (max-width: 1450px) {
+    width: 35px;
+    height: auto;
+  }
+
+  @media (max-width: 1300px) {
+    width: 28px;
+    height: auto;
+  }
+
+  @media (max-width: 1050px) {
+    width: 30px;
+    height: auto;
+  }
+
+  @media (max-width: 650px) {
+    width: 25px;
+    height: auto;
+  }
+
+  @media (max-width: 450px) {
+    width: 20px;
+    height: auto;
+  }
+}
+
+/* Estilo de los detalles de los movimiento en ventas */
+.AccordionDetailsVentas {
+  display: flex;
+  flex-direction: column;
+}
+
+.DescripcionContainerVentas {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.DescripcionContainerVentas .DescripcionIzquierdaVentas {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.DescripcionContainerVentas .DescripcionIzquierdaVentas>div {
+  margin-left: 9%;
+
+  @media (max-width: 1250px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 950px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 8px;
+  }
+
+  @media (max-width:630px) {
+    font-size: 7px;
+  }
+
+  @media (max-width:560px) {
+    font-size: 6px;
+  }
+
+  @media (max-width:490px) {
+    font-size: 5px;
+  }
+
+  @media (max-width:430px) {
+    font-size: 4px;
+  }
+}
+
+.DescripcionContainerVentas .LineaVerticalVentas {
+  height: 65px;
+  width: 1px;
+  background-color: #4acdb9bd;
+  margin-top: -2%;
+
+  @media (max-width: 1100px) {
+    height: 50px;
+    width: 1px;
+    margin-top: -2%;
+  }
+
+  @media (max-width: 950px) {
+    height: 45px;
+    width: 1px;
+    margin-top: -3%;
+  }
+
+  @media (max-width: 700px) {
+    height: 35px;
+    width: 1px;
+    margin-top: -3%;
+  }
+
+  @media (max-width: 560px) {
+    height: 30px;
+    width: 1px;
+    margin-top: -3%;
+  }
+
+  @media (max-width: 490px) {
+    height: 25px;
+    width: 1px;
+    margin-top: -3%;
+  }
+
+  @media (max-width:430px) {
+    font-size: 4px;
+  }
+}
+
+.DescripcionContainerVentas .DescripcionMitadVentas {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+}
+
+.DescripcionContainerVentas .DescripcionMitadVentas>div {
+  margin-left: -70%;
+
+  @media (max-width: 1250px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 950px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 8px;
+  }
+
+  @media (max-width:630px) {
+    font-size: 7px;
+  }
+
+  @media (max-width:560px) {
+    font-size: 6px;
+  }
+
+  @media (max-width:490px) {
+    font-size: 5px;
+  }
+
+  @media (max-width:430px) {
+    font-size: 4px;
+  }
+}
+
+.DescripcionContainerVentas .DescripcionDerechaVentas {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.DescripcionContainerVentas .DescripcionDerechaVentas>div {
+  margin-left: 30%;
+
+  @media (max-width: 1250px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 950px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 8px;
+  }
+
+  @media (max-width:630px) {
+    font-size: 7px;
+  }
+
+  @media (max-width:560px) {
+    font-size: 6px;
+  }
+
+  @media (max-width:490px) {
+    font-size: 5px;
+  }
+
+  @media (max-width:430px) {
+    font-size: 4px;
+  }
+}
+
+.IconoReporteVentas {
+  margin-left: 90%;
+  margin-top: -4%;
+
+  @media (max-width: 1550px) {
+    margin-left: 90%;
+    margin-top: -6%;
+  }
+
+  @media (max-width: 1300px) {
+    margin-left: 90%;
+    margin-top: -8%;
+  }
+
+  @media (max-width: 1050px) {
+    margin-left: 90%;
+    margin-top: -7%;
+  }
+
+  @media (max-width: 950px) {
+    margin-left: 90%;
+    margin-top: -6%;
+  }
+
+  @media (max-width: 800px) {
+    margin-left: 90%;
+    margin-top: -7%;
+  }
+
+  @media (max-width: 450px) {
+    margin-left: 90%;
+    margin-top: -6%;
+  }
+
+}
+
+.IconoReporteVentas .ImagenVentas {
+  width: 40px;
+  height: auto;
+
+  @media (max-width: 1450px) {
+    width: 35px;
+    height: auto;
+  }
+
+  @media (max-width: 1300px) {
+    width: 28px;
+    height: auto;
+  }
+
+  @media (max-width: 1050px) {
+    width: 24px;
+    height: auto;
+  }
+
+  @media (max-width: 800px) {
+    width: 20px;
+    height: auto;
+  }
+
+  @media (max-width: 700px) {
+    width: 18px;
+    height: auto;
+  }
+
+  @media (max-width: 630px) {
+    width: 15px;
+    height: auto;
+  }
+
+  @media (max-width: 490px) {
+    width: 12px;
+    height: auto;
+  }
+
+  @media (max-width: 430px) {
+    width: 10px;
+    height: auto;
+  }
+}
+
+.LineaHorizontalVentas {
+  text-align: center;
+  margin-top: -1.2%;
+
+  @media (max-width: 800px) {
+    margin-top: -2.4%;
+  }
+
+  @media (max-width: 630px) {
+    margin-top: -4%;
+  }
+
+  @media (max-width: 490px) {
+    margin-top: -6%;
+  }
+}
+
+.LineaHorizontalVentas hr {
+  width: 94%;
+  margin: 20px auto;
+  border-color: #4acdb9bd;
+}
+
+/* Estilo de los detalles de los movimiento en No Pagos */
+.AccordionDetailsNoPagos {
+  display: flex;
+  flex-direction: column;
+}
+
+.LineaHorizontalNoPagos {
+  text-align: center;
+  margin-top: -1%;
+}
+
+.LineaHorizontalNoPagos hr {
+  width: 100%;
+  margin: 20px auto;
+  border-color: #4acdb9bd;
+}
+
+.DescripcionIzquierdaNoPagos {
+  display: flex;
+  width: 50%;
+}
+
+.DescripcionIzquierdaNoPagos .DescripcionColumnaNoPagos {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.DescripcionIzquierdaNoPagos .DescripcionNopagos {
+  margin-left: 13%;
+  font-size: 14px;
+  color: gray;
+
+  @media (max-width: 650px) {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 11px;
+    width: 130%;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 11px;
+    width: 150%;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 10px;
+    width: 190%;
+  }
+}
+
+.DescripcionNombre {
+  margin-left: 13%;
+  font-weight: 400;
+  font-size: 20px;
+  color: #313131;
+  width: 100%;
+
+  @media (max-width: 950px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 8px;
+  }
+}
+
+.IconoReporteNoPagos {
+  width: 50%;
+  height: 50%;
+  align-self: center;
+  margin-top: 3%;
+}
+
+.IconoReporteNoPagos .ValorNoPagos {
+  margin-left: 10%;
+  font-size: 14px;
+
+  @media (max-width: 500px) {
+    font-size: 10px;
+
+  }
+}
+
+.IconoReporteNoPagos .Descripcion {
+  margin-left: 10%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #313131;
+
+  @media (max-width: 950px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 8px;
+  }
+}
+
+.IconoReporteNoPagos .imagenNoPagos {
+  width: 30px;
+  height: auto;
+  margin-left: 10%;
+
+  @media (max-width: 1450px) {
+    width: 35px;
+    height: auto;
+  }
+
+  @media (max-width: 1300px) {
+    width: 28px;
+    height: auto;
+  }
+
+  @media (max-width: 1050px) {
+    width: 30px;
+    height: auto;
+  }
+
+  @media (max-width: 750px) {
+    width: 20px;
+    height: auto;
+  }
+
+  @media (max-width: 450px) {
+    width: 20px;
+    height: auto;
+  }
+}
+
+.IconoReporteNoPagos .imagenPagos {
+  width: 30px;
+
+  @media (max-width: 1450px) {
+    width: 35px;
+    height: auto;
+  }
+
+  @media (max-width: 1300px) {
+    width: 28px;
+    height: auto;
+  }
+
+  @media (max-width: 1050px) {
+    width: 30px;
+    height: auto;
+  }
+
+  @media (max-width: 850px) {
+    width: 24px;
+    height: auto;
+  }
+
+  @media (max-width: 650px) {
+    width: 25px;
+    height: auto;
+  }
+
+  @media (max-width: 450px) {
+    width: 20px;
+    height: auto;
+  }
+}
+
+/* Estilos para la pantalla que tenga de medida de 750, para el detais caja */
+@media (max-width: 750px) {
+  .FechaValorBox h3 {
+    font-size: 20px;
+  }
+
+  .selectDetallesCaja {
+    font-size: 20px;
+  }
+
+  .inputDetallesCaja {
+    width: calc(100% - 40px);
+    font-size: 20px;
+  }
+
+  .contenedorIconoBusqueda {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+  }
+
+  .iconoBusqueda {
+    font-size: 20px;
+  }
+}
+
+/* Estilos para la pantalla que tenga de medida de 350, para el detais caja */
+@media (max-width: 350px) {
+  .FechaValorBox h3 {
+    font-size: 13px;
+  }
+
+  .selectDetallesCaja {
+    font-size: 13px;
+  }
+}
+
+/* Estilos de los movimientos de la caja (Movements.js) */
+.ContainerMovimientos h3 {
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 25%;
+  font-size: 20px;
+  border-radius: 30px;
+}
+
+.selectMovimiento {
+  border: 2px solid #4ACDBA;
+  outline: none;
+  width: 50%;
+  height: 50px;
+  background: transparent;
+  border-radius: 30px;
+  padding-left: 10px;
+}
+
+.textArea {
+  border: 2px solid #4ACDBA;
+  outline: none;
+  width: 50%;
+  background: transparent;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.CajaMovimiento {
+  margin: 10px;
+  background-color: #ffffff;
+  height: auto;
+  border-radius: 6%;
+  box-shadow: 15px 15px 30px #000000bd;
+  width: 850px;
+
+  @media (max-width: 1200px) {
+    width: calc(55% - 20px);
+  }
+
+  @media (max-width: 800px) {
+    width: calc(90% - 20px);
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 20px);
+  }
+}
+
+.CajaMovimiento input[type='file'] {
+  display: block;
+  margin: auto;
+  margin-right: 65%;
+}
+
+.iconoBack {
+  position: absolute;
+  top: 22%;
+  left: 25%;
+
+  @media (max-width: 920px) {
+    top: 18%;
+  }
+
+  @media (max-width: 420px) {
+    top: 20%;
+    left: 2%;
+  }
+}
+
+.pin>input {
+  width: 5%;
+  height: auto;
+  margin: 1%;
+  font-size: 52px;
+  text-align: center;
+  border-radius: 100px;
+  box-shadow: 5px 5px 10px #4ACDBA;
+  border: 1px solid #4ACDBA;
+  background: transparent;
+  margin-right: 50px;
+  color: #4ACDBA;
+}
+.loading-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  background-color: rgba(255, 255, 255, 0.8); /* Un fondo semitransparente opcional */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Una sombra opcional */
+}
+.userHeader {
+  width: 100%;
+  display: flex;
+  margin-top: -4%;
+}
+.user {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back {
+  width: 50%;
+  text-align: left;
+}
+.lock {
+  width: 5%;
+  text-align: right;
+}
+/*======================
+    404 page
+=======================*/
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: 'Arvo', serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+  text-align: center;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #ac3131;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.box_404 {
+  margin-top: -50px;
+}
+
+.box_404 h3 {
+  color: #FF7438;
+  font-size: 25px;
+  margin-top: -5%;
+}
+
+.boton404 {
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #FF7438;
+}
+
+/* Estilo del detalle cartera */
+.Titulo h2 {
+  color: #FF7438;
+  font-weight: 900;
+  font-size: 40px;
+  margin-top: 0%;
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
+}
+
+.ValorCuotaAccordion {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-right: 100px;
+  @media (max-width: 930px) {
+    font-size: 18px;
+  }
+  @media (max-width: 730px) {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 100px;
+  }
+  @media (max-width: 500px) {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 40px;
+  }
+}
+
+.DetallesCuotaAccordion {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  margin-left: 100px;
+  margin-right: 100px;
+  @media (max-width: 930px) {
+    font-size: 14px;
+  }
+  @media (max-width: 730px) {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 100px;
+  }
+  @media (max-width: 500px) {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 40px;
+  }
+}
+
+.estadoDetallesCuota {
+  margin-top: -4.4%;
+  margin-left: 95%;
+  margin-bottom: 2%;
+  width: 35px;
+  height: auto;
+
+  @media (max-width: 1400px) {
+    margin-top: -7%;
+  }
+  @media (max-width: 1200px) {
+    margin-top: -9%;
+    margin-left: 92%;
+  }
+  @media (max-width: 930px) {
+    margin-top: -9%;
+    margin-left: 87%;
+  }
+  @media (max-width: 800px) {
+    margin-top: -10%;
+    margin-left: 88%;
+  }
+  @media (max-width: 500px) {
+    margin-top: -13%;
+    margin-left: 93%;
+  }
+}
+
+.iconoUser {
+  position: absolute;
+  top: 32%;
+  left: 25%;
+
+  @media (max-width: 1400px) {
+    top: 30%;
+    left: 23%;
+  }
+  @media (max-width: 1200px) {
+    top: 29%;
+    left: 18%;
+  }
+  @media (max-width: 930px) {
+    top: 29%;
+    left: 15%;
+  }
+  @media (max-width: 800px) {
+    top: 26%;
+    left: 12%;
+  }
+  @media (max-width: 710px) {
+    top: 25%;
+    left: 5%;
+  }
+}
+
+.iconoBackDetails {
+  position: absolute;
+  top: 22%;
+  left: 25%;
+
+  @media (max-width: 1400px) {
+    top: 20%;
+    left: 23%;
+  }
+  @media (max-width: 1200px) {
+    top: 17%;
+    left: 18%;
+  }
+  @media (max-width: 930px) {
+    top: 18.5%;
+    left: 15%;
+  }
+  @media (max-width: 800px) {
+    top: 16%;
+    left: 11%;
+  }
+  @media (max-width: 710px) {
+    top: 16%;
+    left: 4%;
+  }
+}
+
+.CastigarCartera {
+  position: absolute;
+  top: 31%;
+  left: 72%;
+
+  @media (max-width: 1400px) {
+    top: 22%;
+    left: 75%;
+  }
+  @media (max-width: 1200px) {
+    top: 20%;
+    left: 78%;
+  }
+  @media (max-width: 930px) {
+    top: 20%;
+    left: 80%;
+  }
+  @media (max-width: 800px) {
+    top: 18%;
+    left: 85%;
+  }
+}
+
+/* Estilos del modal de Cartera */
+.ModalContentWallet {
+  border: 1px solid #ccc;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+}
+
+.ModalOverlayWallet {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.HeaderPunishWallet {
+  background: #4ACDBA;
+  border-radius: 40px 40px 0px 0px;
+}
+
+.BotonCastigarCartera {
+  margin: 20px;
+  width: 90%;
+  border-radius: 50px;
+  border: none;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.TituloPunisWaller {
+  color: #FF7438;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Estilos del botón de cerrar modal */
+.closeButtonContainerWallet {
+  position: absolute;
+  top: 0%;
+  left: 91%;
+}
+.CerrarModalButtonWallet {
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: #FF7438;
+  font-weight: 700;
+}
+.BodyContact {
+  margin-top: 20%;
+  width: 48%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 15px 15px 30px #000000bd;
+  height: auto;
+  border-radius: 20px;
+}
+.holacontent {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+}
+.holacontent .ContactP{
+  font-size:30px;
+  margin-top:-5%;
+  @media (max-width: 1600px) {
+    font-size:25px;
+    margin-top:-5%;  
+  }
+  @media (max-width: 1400px) {
+    font-size:20px;
+    margin-top:-8%;  
+  }
+}
+.holacontent .contacP{
+  color:black; 
+  font-weight:bold;
+  font-size:20px;
+}
+
+.inputDetallesCaja {
+  border: 2px solid #4ACDBA;
+  margin-top: -5%;
+  border-radius: 20px;
+
+}
+.hola {
+  width: 50%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  @media (max-width: 1200px) {
+    width: 48%;
+
+  }
+}
+.BotonContact {
+  position: absolute;
+  top: 35%;
+  left: 80%;
+  border: none;
+  background-color: white;
+  @media (max-width: 1400px) {
+    top: 32%;
+    left: 78%;
+  }
+  @media (max-width: 1000px) {
+    top: 32%;
+    left: 75%;
+  }
+  @media (max-width: 720px) {
+    top: 25%;
+    left: 73%;
+  }
+  @media (max-width: 600px) {
+    top: 20%;
+    left: 70%;
+  }
+}
+.BotonContactGuardar {
+  background-color: #4ACDBA;
+  display: flex;
+  width: auto;
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  align-items: center;
+  padding-right: 1%;
+  padding-left: 1%;
+
+}
+.iconoBackContact {
+  position: absolute;
+  top: 22%;
+  left: 25%;
+  @media (max-width: 1200px) {
+    top: 16%;
+  }
+  @media (max-width: 1000px) {
+    top: 19%;
+  }
+  @media (max-width: 720px) {
+    top: 16%;
+  }
+  @media (max-width: 600px) {
+    top: 13.5%;
+  }
+}
+.iconoBackWallet {
+  position: absolute;
+  top: 21%;
+  left: 25%;
+
+  @media (max-width: 920px) {
+    top: 18%;
+  }
+
+  @media (max-width: 420px) {
+    top: 20%;
+    left: 2%;
+  }
+}
+.BodyWallet{
+  background-color: #ffffff;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #252525bd;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+.TituloWallet{
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 2%;
+}
+.CantidadWallet{
+  margin-top: -1%;
+  margin-left: 9%;
+  font-size: 12px;
+}
+.ValorCuotaAccordionWallet {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: -1%;
+  color: #FF7438;
+  @media (max-width: 930px) {
+    font-size: 18px;
+  }
+  @media (max-width: 730px) {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 100px;
+  }
+  @media (max-width: 500px) {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 40px;
+  }
+}
+.PerfilWallet{
+  margin-left: 100px;
+  margin-top: -6%;
+}
+.NextWallet{
+  margin-top: -4.4%;
+  margin-left: 95%;
+  margin-bottom: 2%;
+  color: #FF7438;
+  @media (max-width: 1400px) {
+    margin-top: -7%;
+  }
+  @media (max-width: 1200px) {
+    margin-top: -9%;
+    margin-left: 92%;
+  }
+  @media (max-width: 930px) {
+    margin-top: -9%;
+    margin-left: 87%;
+  }
+  @media (max-width: 800px) {
+    margin-top: -10%;
+    margin-left: 88%;
+  }
+  @media (max-width: 500px) {
+    margin-top: -13%;
+    margin-left: 93%;
+  }
+}
+/* Estilo del Switch */
+.switch-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:1%;
+}
+.switch-button>span{
+  color: #000000;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.switch-button .switch-button__checkbox {
+  display: none; 
+}
+.switch-button .switch-button__label {
+  background-color: #3a3a3a;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 3rem;
+  display: inline-block;
+  position: relative; 
+  border: 1px solid black;
+
+}
+.switch-button .switch-button__label:before {
+  transition: .2s;
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fdffff;
+  content: '';
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 1px black;
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+  background-color: #FF7438;
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+  transform: translateX(2rem);
+}
+
+.ContainerWallet {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center; 
+}
+
+.selectWallet {
+  border: 2px solid #FF7438;
+  outline: none;
+  height: 50px;
+  background: transparent;
+  border-radius: 30px;
+  padding-left: 50px;
+  font-size: 20px;
+  width: 55%;
+}
+
+.contenedorIconoBusquedaWallet {
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  transform: translateY(-50%);
+}
+
+.iconoBusquedaWallet {
+  font-size: 24px;
+  color: #000000;
+}
+
+.BodyItemWallet{
+  background-color: #ffffff;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #252525bd;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+.PerfilItemWallet{
+  margin-left: 100px;
+  margin-top: -1%;
+  margin-bottom: 2%;
+}
+.PerfilItemWallet h2 {
+  margin: 0; 
+}
+
+/* Estilo del Payroll */
+.CalendarPayroll{
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+.ContainerPayroll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Payroll {
+  margin: 10px;
+  /* Espacio entre los elementos */
+  background-color: #ffffff;
+  height: 450px;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #000000bd;
+  margin-bottom: 80px;
+  width: calc(35% - 20px);
+  padding: 5px;
+
+  /* Consulta de medios para ajustar el número de columnas en pantallas más pequeñas */
+  @media (max-width: 1200px) {
+    width: calc(33.33% - 20px);
+  }
+
+  @media (max-width: 1200px) {
+    width: calc(50% - 20px);
+  }
+
+  @media (max-width: 1000px) {
+    width: calc(56% - 20px);
+  }
+
+  @media (max-width: 1025px) {
+    width: calc(56% - 20px);
+    height: 330px;
+  }
+
+  @media (max-width: 900px) {
+    width: calc(56% - 10px);
+    height: 400px;
+  }
+
+  @media (max-width: 850px) {
+    width: calc(60% - -10px);
+    height: 370px;
+  }
+
+  @media (max-width: 800px) {
+    width: calc(60% - -50px);
+    height: 350px;
+  }
+
+  @media (max-width: 700px) {
+    width: calc(60% - -70px);
+    height: 400px;
+  }
+
+  @media (max-width: 715px) {
+    width: calc(60% - -110px);
+    height: 400px;
+  }
+
+  @media (max-width: 590px) {
+    width: calc(60% - -160px);
+    height: 400px;
+  }
+
+  @media (max-width: 500px) {
+    width: calc(60% - -170px);
+    height: 500px;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+    font-size: 4px;
+    margin: 5px;
+    height: 285px;
+  }
+
+  @media (max-width: 390px) {
+    width: calc(60% - -170px);
+    height: 280px;
+  }
+
+  @media (max-width: 330px) {
+    width: calc(60% - -170px);
+    height: 220px;
+  }
+}
+
+.creaBox {
+  border: 2px solid #4ACDBA;
+  /* border-width estilo border-color */
+  border-radius: 50px;
+  width: 23%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -17%;
+  margin-left: 45%;
+  font-size: 14px;
+
+  @media (max-width: 458px) {
+    width: 24%;
+    margin-left: 47%;
+    margin-top: -18%;
+    font-size: 14px;
+
+  }
+}
+.tokenBox {
+  border: 2px solid #4ACDBA;
+  /* border-width estilo border-color */
+  border-radius: 50px;
+  width: 23%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5.7%;
+  margin-left: 70%;
+  font-size: 14px;
+  cursor: pointer;
+
+  @media (max-width: 458px) {
+    width: 24%;
+    margin-left: 73%;
+    font-size: 14px;
+
+  }
+}
+.Titulo h1 {
+  margin-top: 10%;
+
+  @media (max-width: 1115px) {
+    margin-top: 15%;
+  }
+
+  @media (max-width: 770px) {
+    margin-top: 19%;
+  }
+  @media (max-width: 600px) {
+    margin-top: 21%;
+    font-size: 20px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 30%;
+  }
+  @media (max-width: 420px) {
+    margin-top: 39%;
+  }
+}
+.responsive-h3 {
+  font-size: 13px;
+  font-weight: 200;
+}
+.responsive-valorPayroll {
+  color: #FF7438;
+  font-size: 20px;
+  font-weight: 400;
+}
+.NombreBox {
+  margin-bottom: 0%;
+  margin-top: 5%;
+  margin-left: 18%;
+  color: black
+}
+.valorPayroll-h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.iconPayroll p {
+  width: 200%;
+  height: auto;
+  margin-top: 5%;
+  margin-left: 7%;
+}
+
+/* Estilo reporte consolidado */
+.ImgReporte{
+  width: 100px;
+  height: auto;
+  margin: 3%;
+  margin-top: auto;
+  margin-bottom: 5%;
+}
+.ContainerItemReporte{
+  margin-top: 5%;
+  margin: 0 auto;
+  width: 35%;
+  height: 140px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #000000bd;  
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+.ItemReporteTitulo{
+  margin-top: -5%;
+  width: 35%;
+  align-self: center;
+  font-size: 30px;
+  color: #4ACDBA;
+}
+.ItemReporteImagenes{
+  width: 45%;
+  align-self: center;
+}
+
+/* Create User */
+
+.ContainerProfile{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Profile{
+  margin-top: 5%;
+  margin: 0 auto;
+  width: 30%;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #000000bd;  
+  margin-bottom: 2%;
+}
+.ContenidoCreate{
+  display: flex;
+  justify-content: space-between;
+}
+.botonEditProfile{
+  background:#4ACDBA; 
+  width:50%;
+  font-size:20px; 
+  border-radius:20px;
+  border: none;
+  margin-bottom: 2%;
+}
+.ContainerEditProfile{
+  background-color: #ffffff;
+  height: 50%;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px #000000bd;
+  padding: 5px;
+  width: 50%;
+  margin: 0 auto;
+}
+.ContainerEditProfile h3 {
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 25%;
+  font-size: 20px;
+  border-radius: 30px;
+}
+.textAreaProfile {
+  border: 2px solid #4ACDBA;
+  outline: none;
+  width: 50%;
+  background: transparent;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 15px;
 }
