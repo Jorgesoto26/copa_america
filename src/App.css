@@ -30,11 +30,12 @@ nav ul li {
 }
 
 .banner {
-  background: url('/logo-copa-america.png') no-repeat center center;
+  background: url('/Users/oscarorozco/Desktop/copa_america/copa_america/src/assets/copa-america.png') no-repeat center center;
   background-size: cover;
   color: white;
   text-align: center;
   padding: 50px 20px;
+  padding-top: 51%;
 }
 
 .btn-primary {
