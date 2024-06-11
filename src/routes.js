@@ -10,6 +10,7 @@ const Routes = (props) => {
 
     return (
         <Switch>
+            <Route exact path="/" component={Login} />
             <Route exact path="/" component={Home} />
             <Route exact path="*"><NoMatch /></Route>
         </Switch>
