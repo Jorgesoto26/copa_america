@@ -29,13 +29,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validar que las contraseñas coincidan
     if (password === confirmPassword) {
-      // Las contraseñas coinciden, puedes continuar con el registro
       console.log("Contraseñas coinciden. Puedes continuar con el registro.");
       console.log("Cédula:", cedula);
     } else {
-      // Las contraseñas no coinciden, muestra un mensaje de error
       console.log("Las contraseñas no coinciden. Por favor, intenta de nuevo.");
       setPasswordsMatch(false);
     }
@@ -48,8 +45,6 @@ const Login = () => {
         <div className="wrapper">
           {!showRegisterForm ? (
             <div className="login-wrapper">
-              {" "}
-              {/* Wrapper para iniciar sesión */}
               <form action="#">
                 <Image src={Img} />
                 <h2>Iniciar sesión</h2>
@@ -74,16 +69,12 @@ const Login = () => {
             </div>
           ) : (
             <div className="register-wrapper">
-              {" "}
-              {/* Wrapper para registro */}
               <Image src={Img} style={{ width: "108%" }} />
               <form onSubmit={handleSubmit}>
                 <h2 style={{ position: "absolute", left: "38%", top: "33%" }}>
                   Registrarse
                 </h2>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
+                <div className="form-container">
                   <div className="column">
                     <div className="input-field">
                       <input type="text" required />
@@ -118,36 +109,35 @@ const Login = () => {
                     </div>
                   </div>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-  <div className="column">
-    <div className="input-field">
-      <input
-        type="password"
-        required
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <label>Ingrese la contraseña</label>
-    </div>
-  </div>
-  <div className="column">
-    <div className="input-field">
-      <input
-        type="password"
-        required
-        value={confirmPassword}
-        onChange={handleConfirmPasswordChange}
-      />
-      <label>Confirmar contraseña</label>
-      {!passwordsMatch && (
-        <p className="error-message">
-          Las contraseñas no coinciden.
-        </p>
-      )}
-    </div>
-  </div>
-</div>
-
+                <div className="form-container">
+                  <div className="column">
+                    <div className="input-field">
+                      <input
+                        type="password"
+                        required
+                        value={password}
+                        onChange={handlePasswordChange}
+                      />
+                      <label>Ingrese la contraseña</label>
+                    </div>
+                  </div>
+                  <div className="column">
+                    <div className="input-field">
+                      <input
+                        type="password"
+                        required
+                        value={confirmPassword}
+                        onChange={handleConfirmPasswordChange}
+                      />
+                      <label>Confirmar contraseña</label>
+                      {!passwordsMatch && (
+                        <p className="error-message">
+                          Las contraseñas no coinciden.
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
                 <button type="submit">Registrarse</button>
               </form>
             </div>

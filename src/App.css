@@ -30,7 +30,7 @@ nav ul li {
 }
 
 .banner {
-  background: url('/Users/oscarorozco/Desktop/copa_america/copa_america/src/assets/copa-america.png') no-repeat center center;
+  background: url('../src/assets/copa-america.png') no-repeat center center;
   background-size: cover;
   color: white;
   text-align: center;
