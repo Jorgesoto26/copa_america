@@ -1,19 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import '../home/home.css';
 import { Button, Image } from 'react-bootstrap';
+import ReactModal from 'react-modal';
 import Img from "../assets/copa-america.png";
 import Img2 from "../assets/App-logo1.png";
+import '../home/home.css';
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        
+    },
+};
+
+ReactModal.setAppElement('#root');
 
 const Home = () => {
     const [groups, setGroups] = useState({});
     const [matches, setMatches] = useState({});
     const [isCodeCorrect, setIsCodeCorrect] = useState(false);
     const [inputCode, setInputCode] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
-            const fixturesUrl = 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=9&season=2024';
-            const standingsUrl = 'https://api-football-v1.p.rapidapi.com/v3/standings?league=9&season=2024';
+            const fixturesUrl = 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=9&season=2021';
+            const standingsUrl = 'https://api-football-v1.p.rapidapi.com/v3/standings?league=9&season=2021';
             const options = {
                 method: 'GET',
                 headers: {
@@ -57,7 +73,8 @@ const Home = () => {
                 }
 
                 if (standingsResponse.ok) {
-                    const standingsResult = await standingsResponse.json();
+                    const standingsResult =  await standingsResponse.json();
+                    console.log( 'informacion_equipos',standingsResult);
                     if (standingsResult.response && standingsResult.response.length > 0) {
                         const league = standingsResult.response[0].league;
                         if (league && league.standings && league.standings.length > 0) {
@@ -66,7 +83,17 @@ const Home = () => {
                                     const group = teamStanding.group || 'Unknown Group';
                                     const teamInfo = {
                                         equipo: teamStanding.team.name,
-                                        fotoEquipo: teamStanding.team.logo
+                                        fotoEquipo: teamStanding.team.logo,
+                                        partidosjugados:teamStanding.all.played,
+                                        partidosganados:teamStanding.all.win,
+                                        partidosempatados:teamStanding.all.draw,
+                                        partidosperdidos:teamStanding.all.lose,
+                                        golesfavor:teamStanding.all.goals.for,
+                                        golescontra:teamStanding.all.goals.against,
+                                        diferenciagol:(teamStanding.all.goals.for-teamStanding.all.goals.against),
+                                        puntos:teamStanding.points
+                                        
+
                                     };
 
                                     if (!acc[group]) {
@@ -77,6 +104,7 @@ const Home = () => {
                                 });
                                 return acc;
                             }, {});
+                            console.log("grupos..:", groupsByTeam);
                             setGroups(groupsByTeam);
                         } else {
                             console.error('League standings are undefined or empty');
@@ -114,6 +142,23 @@ const Home = () => {
         }
     };
 
+    const handleModalOpen = () => setShowModal(true);
+    const handleModalClose = () => setShowModal(false);
+
+    // Función para ordenar y agrupar las fechas según la cantidad de partidos
+    const sortedAndGroupedDates = Object.keys(matches).sort((a, b) => new Date(a) - new Date(b)).reduce((acc, date) => {
+        const isSingleMatch = matches[date].length === 1;
+        if (isSingleMatch) {
+            if (acc.length === 0 || acc[acc.length - 1].length > 1) {
+                acc.push([]);
+            }
+            acc[acc.length - 1].push(date);
+        } else {
+            acc.push([date]);
+        }
+        return acc;
+    }, []);
+
     return (
         <div className="App">
             {!isCodeCorrect && (
@@ -130,64 +175,104 @@ const Home = () => {
                     </div>
                 </div>
             )}
+            {isCodeCorrect && (
+                <div className="top-bar">
+                    <div className="user-info">
+                        <span>Nombre del Usuario: Juan Pérez</span>
+                        <span>Puntuación: 10</span>
+                    </div>
+                    <Button className="stats-button" onClick={handleModalOpen}>Estadísticas</Button>
+                </div>
+            )}
             <main className="content">
                 <Image src={Img} className="background-image" />
-                <Button onClick={() => window.location.reload()}>Cargar Datos</Button>
-                <div className="grid">
-                    {Object.keys(matches).map(date => (
-                        <div key={date}>
-                            <h3>{date}</h3>
-                            <div className="grid-container">
-                                {matches[date].map(match => (
-                                    <div key={match.id} className="match">
-                                        <div className="fecha">
-                                            {match.fechaPartido}
-                                        </div>
-                                        <div className="team">
-                                            <Image src={match.photoTeam1} alt={match.team1} />
-                                            <span>{match.team1}</span>
-                                            <input
-                                                type="text"
-                                                placeholder="Resultado"
-                                                value={match.result || ''}
-                                                onChange={(e) => handleInputChange(match.id, 'matches', e)}
-                                            />
-                                        </div>
-                                        <div className="vs">VS</div>
-                                        <div className="team">
-                                            <Image src={match.photoTeam2} alt={match.team2} />
-                                            <span>{match.team2}</span>
-                                            <input
-                                                type="text"
-                                                placeholder="Resultado"
-                                                value={match.result || ''}
-                                                onChange={(e) => handleInputChange(match.id, 'matches', e)}
-                                            />
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+
                 <div className="center-column">
                     <h2>Grupos</h2>
                     {Object.keys(groups).map(group => (
-                        <div key={group}>
-                            <h3>{group}</h3>
+                        <div key={group} className="group-container">
+                            <div className="group-name">
+                                <span>{group}</span>
+                            </div>
                             {groups[group].map((team, index) => (
                                 <div key={index} className="team">
-                                    <Image src={team.fotoEquipo} alt={team.equipo} />
+                                    <img src={team.fotoEquipo} alt={team.equipo} />
                                     <span>{team.equipo}</span>
                                 </div>
                             ))}
                         </div>
                     ))}
                 </div>
+
+
+                <div className="grid">
+                    {sortedAndGroupedDates.map((groupedDates, index) => (
+                        <div key={index}>
+                            {groupedDates.map(date => (
+                                <div key={date}>
+                                    <h3>{date}</h3>
+                                    <div className="grid-container">
+                                        {matches[date].map(match => (
+                                            <div key={match.id} className="match">
+                                                <div className="fecha">
+                                                    {match.fechaPartido}
+                                                </div>
+                                                <div className="team">
+                                                    <Image src={match.photoTeam1} alt={match.team1} />
+                                                    <span>{match.team1}</span>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Resultado"
+                                                        value={match.result || ''}
+                                                        onChange={(e) => handleInputChange(match.id, 'matches', e)}
+                                                    />
+                                                </div>
+                                                <div className="vs">VS</div>
+                                                <div className="team">
+                                                    <Image src={match.photoTeam2} alt={match.team2} />
+                                                    <span>{match.team2}</span>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Resultado"
+                                                        value={match.result || ''}
+                                                        onChange={(e) => handleInputChange(match.id, 'matches', e)}
+                                                    />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+
             </main>
             <footer>
                 <p>&copy; 2024 Centro Comercial Mall Plaza. Todos los derechos reservados.</p>
             </footer>
+
+            {/* Modal de Estadísticas */}
+            <ReactModal
+                isOpen={showModal}
+                onRequestClose={handleModalClose}
+                 className="ModalContent"
+                 portalClassName="fondo"
+                contentLabel="Estadísticas"
+            >
+            <style>
+                {
+                    ` 
+                   
+                    `
+                }
+            </style>
+                <h2>Estadísticas</h2>
+                <button onClick={handleModalClose}>Cerrar</button>
+                <div>
+                    <p>Aquí van las estadísticas del usuario...</p>
+                </div>
+            </ReactModal>
         </div>
     );
 };
