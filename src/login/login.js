@@ -12,7 +12,7 @@ const Login = () => {
   const [cedula, setCedula] = useState("");
 
   const handleRegisterClick = () => {
-    setShowRegisterForm(true);
+    setShowRegisterForm(!showRegisterForm);
   };
 
   const handlePasswordChange = (e) => {
@@ -46,7 +46,7 @@ const Login = () => {
           {!showRegisterForm ? (
             <div className="login-wrapper">
               <form action="#">
-                <Image src={Img} />
+                <Image src={Img} className="Image"/>
                 <h2>Iniciar sesión</h2>
                 <div className="input-field">
                   <input type="text" required />
@@ -56,7 +56,9 @@ const Login = () => {
                   <input type="password" required />
                   <label>Ingrese la contraseña</label>
                 </div>
-                <button type="submit">Iniciar sesión</button>
+                <div class="button-container">
+                <button class="register-button" type="submit">Iniciar sesión</button>
+                </div>
                 <div className="register">
                   <p>
                     ¿No tienes una cuenta?{" "}
@@ -71,18 +73,18 @@ const Login = () => {
             <div className="register-wrapper">
               <Image src={Img} style={{ width: "108%" }} />
               <form onSubmit={handleSubmit}>
-                <h2 style={{ position: "absolute", left: "38%", top: "33%" }}>
+                <h2>
                   Registrarse
                 </h2>
                 <div className="form-container">
                   <div className="column">
                     <div className="input-field">
                       <input type="text" required />
-                      <label>Ingrese su nombre</label>
+                      <label>Nombre</label>
                     </div>
                     <div className="input-field">
                       <input type="email" required />
-                      <label>Ingrese su correo</label>
+                      <label>Correo</label>
                     </div>
                     <div className="input-field">
                       <input
@@ -91,21 +93,21 @@ const Login = () => {
                         value={cedula}
                         onChange={handleCedulaChange}
                       />
-                      <label>Ingrese su cédula</label>
+                      <label>Cédula</label>
                     </div>
                   </div>
                   <div className="column">
                     <div className="input-field">
                       <input type="text" required />
-                      <label>Ingrese ciudad</label>
+                      <label>Ciudad</label>
                     </div>
                     <div className="input-field">
                       <input type="text" required />
-                      <label>Ingrese dirección</label>
+                      <label>Dirección</label>
                     </div>
                     <div className="input-field">
                       <input type="text" required />
-                      <label>Ingrese su número de celular</label>
+                      <label>Número de celular</label>
                     </div>
                   </div>
                 </div>
@@ -118,7 +120,7 @@ const Login = () => {
                         value={password}
                         onChange={handlePasswordChange}
                       />
-                      <label>Ingrese la contraseña</label>
+                      <label>Contraseña</label>
                     </div>
                   </div>
                   <div className="column">
@@ -138,7 +140,13 @@ const Login = () => {
                     </div>
                   </div>
                 </div>
-                <button type="submit">Registrarse</button>
+                <div class="button-container">
+                  <button class="register-button" type="submit">Registrarse</button>
+                  <a class="login-link" href="#" onClick={handleRegisterClick}>
+                    Iniciar Sesión
+                  </a>
+                </div>
+
               </form>
             </div>
           )}
@@ -146,7 +154,7 @@ const Login = () => {
       </main>
       <footer>
         <p>
-          &copy; 2024 Centro Comercial Mall Plaza. Todos los derechos
+          &copy; 2024 Centro Comercial MallPlaza. Todos los derechos
           reservados.
         </p>
       </footer>
