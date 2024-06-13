@@ -7,26 +7,32 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.login-wrapper, .register-wrapper {
-  width: 400px;
-  border-radius: 8px;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid rgb(0 0 0 / 50%);
-  backdrop-filter: brightness(0.5);
-  -webkit-backdrop-filter: blur(8px);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50%;
+
+  margin-bottom: 20%;
 }
 
-.login-wrapper {
-  top: 7%;
+.login-wrapper, .register-wrapper {
+  width: 45%;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.83);
+  backdrop-filter: brightness(0.5);
 }
+
 
 .register-wrapper {
-  width: 31%;
-  top: 13%;
+  width: 50%;
+}
+
+.Image {
+  max-width: 100%; /* Establece un ancho máximo para la imagen */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
 }
 
 form {
@@ -130,6 +136,48 @@ button:hover {
   color: red;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: rgb(25, 24, 24);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-link {
+  margin-top: 10px;
+  color: #4CAF50;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #adadad; /* Color de fondo opcional */
+  text-align: center; /* Alineación del contenido del footer */
+  padding: 10px 0; /* Espaciado interno del footer */
+}
+
+
 @media screen and (max-width: 768px) {
   .login-wrapper, .register-wrapper {
     width: 90%;
@@ -155,9 +203,6 @@ button:hover {
     font-size: 14px;
   }
 
-  footer{
-    margin-top: 175%;
-  }
 
 }
 
